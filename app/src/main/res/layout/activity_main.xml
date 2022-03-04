@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.helicoptera.nutrition.ui.MainViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.MainActivity">
+
+            <TextView
+                android:id="@+id/nutrition_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="56dp"
+                android:text="@string/nutrition"
+                android:textAppearance="@style/TitleTextAppearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/measurement_container"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/nutrition_title"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_title">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/calories_goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/calories_goal_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/calories_goal"
+                        android:textAppearance="@style/RegularTextAppearance"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/calories_goal_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.caloriesGoal}"
+                        android:textAppearance="@style/ValueTextAppearance"
+                        app:layout_constraintEnd_toStartOf="@id/calories_goal_measure"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1450" />
+
+                    <TextView
+                        android:id="@+id/calories_goal_measure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kcal"
+                        android:textAppearance="@style/ValueTextAppearance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/eating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/eating_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/eating"
+                        android:textAppearance="@style/RegularTextAppearance"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/eating_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.eating}"
+                        android:textAppearance="@style/ValueTextAppearance"
+                        app:layout_constraintEnd_toStartOf="@id/eating_measure"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1000" />
+
+                    <TextView
+                        android:id="@+id/eating_measure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kcal"
+                        android:textAppearance="@style/ValueTextAppearance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/burn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/burn_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/burn"
+                        android:textAppearance="@style/RegularTextAppearance"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/burn_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.burn}"
+                        android:textAppearance="@style/ValueTextAppearance"
+                        app:layout_constraintEnd_toStartOf="@id/burn_measure"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="300" />
+
+                    <TextView
+                        android:id="@+id/burn_measure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kcal"
+                        android:textAppearance="@style/ValueTextAppearance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/total_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="end"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/measurement_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/measurement_container">
+
+                <TextView
+                    android:id="@+id/total_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:textAppearance="@style/RegularTextAppearance" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.total}"
+                    android:textAppearance="@style/ValueTextAppearance"
+                    android:textSize="48sp"
+                    tools:text="700" />
+
+                <TextView
+                    android:id="@+id/total_measure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kcal"
+                    android:textAppearance="@style/ValueTextAppearance" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_marginTop="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/measurement_container" />
+
+            <View
+                android:id="@+id/delimiter"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/delimiter_color"
+                app:layout_constraintTop_toBottomOf="@id/chart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/total_container"
+                app:layout_constraintStart_toStartOf="@id/measurement_container"
+                app:layout_constraintTop_toBottomOf="@id/delimiter" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Nutrition</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="calories_goal">Calories goal:</string>
+    <string name="kcal">kcal</string>
+    <string name="eating">Eating:</string>
+    <string name="total">Total:</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">dinner</string>
+    <string name="burn">Burn:</string>
+    <string name="insert_kcal_value">Insert kcal value</string>
+    <string name="submit">Submit</string>
+    <string name="dismiss">Dismiss</string>
+</resources>
